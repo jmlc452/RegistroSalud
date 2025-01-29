@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mostrar Imagen desde Endpoint</title>
+</head>
+<body>
+
+    <h1>Imagen recibida desde el servidor</h1>
+    <img id="imagen-servidor" src="" alt="Imagen del servidor" width="300" >
+
+    <script>
+        // Suponiendo que el endpoint devuelve la imagen directamente
+        fetch('http://localhost:8081/api/upload/users/6716801bc0c5a24ea6676a5d')
+            .then(response => response.blob())  // Convierte la respuesta en un blob
+            .then(blob => {
+                // Crear un objeto URL que apunte al blob
+                const imgUrl = URL.createObjectURL(blob);
+                // Asignar el URL creado al atributo src de la imagen
+                document.getElementById('imagen-servidor').src = imgUrl;
+            })
+            .catch(error => console.error('Error al cargar la imagen:', error));
+    </script>
+
+</body>
+</html>

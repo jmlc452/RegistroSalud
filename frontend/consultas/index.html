@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Consulta Médica</title>
+    <link href="/bootstrap-5.3.3-dist/bootstrap-5.3.3-dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/select/dist/css/select2.min.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <div class="container mt-5">
+        <a href="" class="btn btn-primary my-4" id="btn-volver">Volver</a>
+
+        <h1>Registro de Consulta Médica</h1>
+        <form id="consultaForm">
+            <!-- Select con opciones y búsqueda integrada -->
+            <div class="form-group" id="especialidadelement">
+                <label for="especialidad" class="form-label ">Especialidad (solo doctores):</label>
+                <select id="especialidad" class="miselec form-select" name="miselec">
+
+                </select>
+            </div>
+
+
+
+
+            <!-- Datos del Doctor -->
+            <div class="form-group">
+                <label for="doctor" class="form-label">Doctor</label>
+                <select class="form-select" id="doctor" required>
+                    <!-- Aquí se cargarán los doctores disponibles -->
+                </select>
+            </div>
+
+            <!-- Datos de la Consulta -->
+            <div class="form-group">
+                <label for="fecha">Fecha de Consulta:</label>
+                <input type="date" id="fecha" name="consulta[fecha]" class="form-control" required>
+            </div>
+
+            <div class="form-group">
+                <label for="fecha">hora de Consulta:</label>
+                <input type="time" id="hora" name="consulta[hora]" class="form-control" required>
+            </div>
+
+            <div class="form-group">
+                <label for="motivo">Motivo de la Consulta:</label>
+                <input type="text" id="motivo" name="consulta[motivo]" class="form-control" required>
+            </div>
+
+            <div class="form-group">
+                <label for="descripcionProblema">Descripción del Problema Actual:</label>
+                <textarea id="descripcionProblema" name="consulta[descripcionProblema]" class="form-control"></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="tiempoEvolucion">Tiempo de Evolución de los Síntomas:</label>
+                <input type="text" id="tiempoEvolucion" name="consulta[tiempoEvolucion]" class="form-control">
+            </div>
+
+            <div class="form-group">
+                <label for="examenFisico">Examen Físico:</label>
+                <textarea id="examenFisico" name="consulta[examenFisico]" class="form-control"></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="diagnostico">Diagnóstico:</label>
+                <textarea id="diagnostico" name="consulta[diagnostico]" class="form-control"></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="planTratamiento">Plan de Tratamiento:</label>
+                <textarea id="planTratamiento" name="consulta[planTratamiento]" class="form-control"></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="notasAdicionales">Notas Adicionales:</label>
+                <textarea id="notasAdicionales" name="consulta[notasAdicionales]" class="form-control"></textarea>
+            </div>
+
+            <!-- Estado de la Consulta -->
+            <div class="form-group">
+                <label for="estado">Estado de la Consulta:</label>
+                <select id="estado" name="estado" class="form-control">
+                    <option value="En proceso">En proceso</option>
+                    <option value="Finalizada">Finalizada</option>
+                    <option value="Pendiente de seguimiento">Pendiente de seguimiento</option>
+                </select>
+            </div>
+
+            <!-- Botón para enviar el formulario -->
+            <button type="submit" class="btn btn-primary">Registrar Consulta</button>
+        </form>
+    </div>
+
+    <!-- Incluir jQuery y Select2 JS desde un CDN -->
+    <script src="/jquery-3.6.0.min.js"></script>
+    <script src="/select/dist/js/select2.min.js"></script>
+
+    <script>
+        // Inicializar Select2 en el select
+        $(document).ready(function () {
+            $('#especialidad').select2({
+                placeholder: 'Selecciona una opción',
+                allowClear: true
+            });
+        });
+    </script>
+
+
+    <!-- Incluir Bootstrap JS y dependencias de jQuery y Popper.js -->
+    <script src="/bootstrap-5.3.3-dist/bootstrap-5.3.3-dist/js/bootstrap.bundle.min.js"></script>
+    <script type="module" src="./crearConsultas.js"></script> <!-- Ajusta la ruta a tu archivo JavaScript -->
+
+</body>
+
+</html>

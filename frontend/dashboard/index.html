@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crear Paciente</title>
+    <!-- Bootstrap CSS -->
+    <link href="/bootstrap-5.3.3-dist/bootstrap-5.3.3-dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<style>
+    /* Centrar el contenido dentro de la card */
+    .hover-card .card-body {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+
+    /* Mantener el efecto hover */
+    .hover-card:hover {
+        transform: translateY(-5px);
+        transition: transform 0.3s ease;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .hover-card .card-img-top {
+        object-fit: cover;
+        width: 100%;
+        /* Asegura que la imagen ocupe todo el ancho del card */
+        height: auto;
+        display: block;
+        margin: 0 auto;
+        /* Centrar la imagen horizontalmente */
+    }
+
+
+
+    /* Asegurar que el enlace no tenga subrayado */
+    .text-decoration-none:hover {
+        text-decoration: none;
+    }
+</style>
+
+<body>
+
+
+    <!-- navbar -->
+    <div class="container">
+        <!-- Aquí se insertará el navbar -->
+        <div id="navbar-container"></div>
+
+        <div id="liveAlertPlaceholder"></div>
+
+
+        <div class="container">
+            <h2 class="">Consultas pendientes</h2>
+            <ul id="consulta-lista" class="list-group mt-3"></ul>
+        </div>
+
+
+
+
+
+
+
+        <div class="container mt-2">
+            <h2>Pacientes Registrados</h2>
+
+            <div class="container row mt-3">
+                <a href="/pacientes/crear.html" class="btn btn-primary col-2">
+                    Registrar nuevo paciente
+                </a>
+
+                <!-- Barra de búsqueda -->
+                <div class="input-group col">
+                    <button class="btn  btn-primary" type="button" id="searchBtn">Buscar</button>
+                    <input type="text" id="searchInput" class="form-control" placeholder="Ingrese nombre, apellido, cedula o correo" aria-label="Example text with button addon" aria-describedby="searchBtn">
+                </div>
+
+            </div>
+        </div>
+        <div class="container mt-4">
+            <div id="pacientesList" class=" d-flex flex-wrap"></div>
+        </div>
+    </div>
+
+
+
+
+    <!-- Bootstrap JS -->
+    <script src="/bootstrap-5.3.3-dist/bootstrap-5.3.3-dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/fullcalendar/dist/index.global.min.js"></script>
+    <script type="module" src="/helpers/comprobador.js"></script>
+    <script type="module" src="/helpers/navbar.js"></script>
+    <!-- <script type="module" src="/pacientes/mostrarTodosPacientes.js"></script> -->
+    <script type="module" src="dashboard.js"></script>
+
+    <script type="module" src="./calendar.js"></script>
+
+</body>
+
+</html>

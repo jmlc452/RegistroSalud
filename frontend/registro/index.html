@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Usuario</title>
+    <link href="/bootstrap-5.3.3-dist/bootstrap-5.3.3-dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/select/dist/css/select2.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+</head>
+
+
+
+<body>
+    <div class="container">
+
+        <div class="row align-items-center">
+            <div class="col-md-6 ">
+                <img src="../logo.png" class="img-fluid" alt="Descripción de la imagen">
+            </div>
+            <div class="col-md-6">
+                <form id="userForm" enctype="multipart/form-data">
+                    <div id="liveAlertPlaceholder"></div>
+
+                    <div class="form-group">
+                        <label for="fullname">Nombre completo:</label>
+                        <input type="text" id="fullname" name="fullname" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Correo electrónico:</label>
+                        <input type="email" id="email" name="email" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Contraseña:</label>
+
+                        <input type="password" id="password" name="password" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="miSelect">Selecciona un rol</label>
+
+                        <select id="miSelect" class="form-select" aria-label="Default select example">
+
+                        </select>
+                    </div>
+
+
+                    <!-- Select con opciones y búsqueda integrada -->
+                    <div class="form-group">
+                        <label for="especialidad" class="form-label">Especialidad (solo doctores):</label>
+                        <select id="especialidad" class="form-select" aria-label="Disabled select example">
+
+                        </select>
+                    </div>
+
+
+
+                    <div class="mt-2">
+                        <label for="img" class="form-label">Seleccione una foto de perfil</label>
+                        <input class="form-control" type="file" id="img" name="img">
+                    </div>
+                    <div class="mt-3">
+
+                        <button type="submit" class="btn btn-primary">Registrar</button>
+                    </div>
+
+                    <div class="text-center mt-3">
+                        <small class="form-text">Si ya estas registrado inicia sesion <a
+                                href="/login/index.html">aqui</a></small>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Incluir jQuery y Select2 JS desde un CDN -->
+    <script src="/jquery-3.6.0.min.js"></script>
+    <script src="/select/dist/js/select2.min.js"></script>
+
+    <script>
+        // Inicializar Select2 en el select
+        $(document).ready(function () {
+            $('#especialidad').select2({
+                placeholder: 'Selecciona una opción',
+                allowClear: true
+            });
+        });
+    </script>
+    <!-- Enlace a Bootstrap JS y dependencias -->
+    <script src="/bootstrap-5.3.3-dist/bootstrap-5.3.3-dist/js/bootstrap.min.js"></script>
+    <script type="module" src="/registro/registro.js"></script>
+    <script type="module" src="/helpers/cargarEspecialidades.js"></script>
+</body>
+
+</html>

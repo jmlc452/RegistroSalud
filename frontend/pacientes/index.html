@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crear Paciente</title>
+    <!-- Bootstrap CSS -->
+    <link href="/bootstrap-5.3.3-dist/bootstrap-5.3.3-dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- navbar -->
+    <div class="container">
+        <!-- Aquí se insertará el navbar -->
+        <div id="navbar-container"></div>
+
+        <div id="liveAlertPlaceholder"></div>
+
+        <div class="container">
+            <a href="/pacientes/crear.html" class="btn btn-primary">
+                Registrar nuevo paciente
+            </a>
+        </div>
+        <div class="container mt-4">
+            <h1>Pacientes Registrados</h1>
+            <ul id="pacientesList" class="list-group">
+                <!-- Aquí se insertarán los pacientes -->
+            </ul>
+        </div>
+    </div>
+
+
+    <!-- Modal para editar paciente -->
+    <div class="modal fade modal-lg" id="editModal" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-header">
+
+                    <h5 class="modal-title" id="editModalLabel">Editar Paciente</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="container mt-5">
+                        <h2>Registro de Pacientes</h2>
+                        <form id="editForm">
+                            <!-- Información Personal -->
+                            <div class="row mb-3">
+                                <div class="col">
+                                    <label for="nombre" class="form-label">Nombre <span
+                                            class="text-danger">*</span></label>
+                                    <input type="text" class="form-control" id="nombre" required>
+                                </div>
+                                <div class="col">
+                                    <label for="apellido" class="form-label">Apellido <span
+                                            class="text-danger">*</span></label>
+                                    <input type="text" class="form-control" id="apellido" required>
+                                </div>
+
+                            </div>
+
+                            <div class="row mb-3">
+                                <div class="col">
+                                    <label for="fechaNacimiento" class="form-label">Fecha de Nacimiento <span
+                                            class="text-danger">*</span></label>
+                                    <input type="date" class="form-control" id="fechaNacimiento" required>
+                                </div>
+                                <div class="col">
+                                    <label for="genero" class="form-label">Sexo</label>
+                                    <select id="genero" class="form-select">
+                                        <option value="Masculino">Macho</option>
+                                        <option value="Femenino">Hembra</option>
+                                    </select>
+                                </div>
+                                <div class="col">
+                                    <label for="nacionalidad" class="form-label">Nacionalidad</label>
+                                    <input type="text" class="form-control" id="nacionalidad">
+                                </div>
+
+                            </div>
+
+                            <div class="row">
+                                <div class="col">
+                                    <label for="estadoCivil" class="form-label">Estado Civil</label>
+                                    <input type="text" class="form-control" id="estadoCivil">
+                                </div>
+                                <div class="col">
+                                    <label for="documentoIdentidad" class="form-label">Documento de Identidad <span
+                                            class="text-danger">*</span></label>
+                                    <input type="text" class="form-control" id="documentoIdentidad" required>
+                                </div>
+
+                                <div class="col">
+                                    <label for="telefonoMovil" class="form-label">Teléfono Móvil <span
+                                            class="text-danger">*</span></label>
+                                    <input type="text" class="form-control" id="telefonoMovil" required>
+                                </div>
+
+                            </div>
+
+                            <div class="row">
+                                <div class="col">
+                                    <label for="telefonoFijo" class="form-label">Teléfono Fijo</label>
+                                    <input type="text" class="form-control" id="telefonoFijo">
+                                </div>
+                                <div class="col">
+                                    <label for="correoElectronico" class="form-label">Correo Electrónico</label>
+                                    <input type="email" class="form-control" id="correoElectronico">
+                                </div>
+                            </div>
+
+
+
+
+                            <!-- Información de Vivienda -->
+                            <a data-bs-toggle="collapse" href="#infoVivienda" role="button" aria-expanded="false"
+                                aria-controls="collapseExample">
+                                <h4>Información de Vivienda</h4>
+                            </a>
+                            <div class="collapse" id="infoVivienda">
+                                <div class="mb-3">
+                                    <label for="estado" class="form-label">Estado</label>
+                                    <input type="text" class="form-control" id="estado">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="ciudad" class="form-label">Ciudad</label>
+                                    <input type="text" class="form-control" id="ciudad">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="calle" class="form-label">Calle</label>
+                                    <input type="text" class="form-control" id="calle">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="numero" class="form-label">Número</label>
+                                    <input type="text" class="form-control" id="numero">
+                                </div>
+                            </div>
+
+
+                            <!-- Información Médica -->
+
+                            <a data-bs-toggle="collapse" href="#infoMedica" role="button" aria-expanded="false"
+                                aria-controls="collapseExample">
+                                <h4>Información Médica</h4>
+                            </a>
+                            <div class="collapse" id="infoMedica">
+                                <div class="mb-3">
+                                    <label for="tipoSangre" class="form-label">Tipo de Sangre </label>
+                                    <input type="text" class="form-control" id="tipoSangre">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="alergias" class="form-label">Alergias</label>
+                                    <input type="text" class="form-control" id="alergias"
+                                        placeholder="Separadas por comas">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="condicionesPreexistentes" class="form-label">Condiciones
+                                        Preexistentes</label>
+                                    <input type="text" class="form-control" id="condicionesPreexistentes"
+                                        placeholder="Separadas por comas">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="medicamentosActuales" class="form-label">Medicamentos Actuales</label>
+                                    <input type="text" class="form-control" id="medicamentosActuales"
+                                        placeholder="Separadas por comas">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="antecedentesFamiliares" class="form-label">Antecedentes
+                                        Familiares</label>
+                                    <input type="text" class="form-control" id="antecedentesFamiliares"
+                                        placeholder="Separadas por comas">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="vacunasRecibidas" class="form-label">Vacunas Recibidas</label>
+                                    <input type="text" class="form-control" id="vacunasRecibidas"
+                                        placeholder="Separadas por comas">
+                                </div>
+
+                            </div>
+
+
+
+                            <!-- Contacto de Emergencia -->
+
+                            <a data-bs-toggle="collapse" href="#ContactoEmergencia" role="button" aria-expanded="false"
+                                aria-controls="collapseExample">
+                                <h4>Contacto de Emergencia</h4>
+                            </a>
+                            <div class="collapse" id="ContactoEmergencia">
+
+                                <div class="mb-3">
+                                    <label for="nombreEmergencia" class="form-label">Nombre del Contacto</label>
+                                    <input type="text" class="form-control" id="nombreEmergencia">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="relacionEmergencia" class="form-label">Relación</label>
+                                    <input type="text" class="form-control" id="relacionEmergencia">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="telefonoEmergencia" class="form-label">Teléfono de Contacto</label>
+                                    <input type="text" class="form-control" id="telefonoEmergencia">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="direccionEmergencia" class="form-label">Dirección</label>
+                                    <input type="text" class="form-control" id="direccionEmergencia">
+                                </div>
+
+                            </div>
+
+
+
+                            <!-- Seguro Médico -->
+                            <a data-bs-toggle="collapse" href="#SeguroMedico" role="button" aria-expanded="false"
+                                aria-controls="collapseExample">
+                                <h4>Seguro Médico</h4>
+                            </a>
+                            <div class="collapse" id="SeguroMedico">
+
+                                <div class="mb-3">
+                                    <label for="nombreAseguradora" class="form-label">Nombre de la Aseguradora</label>
+                                    <input type="text" class="form-control" id="nombreAseguradora">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="numeroPoliza" class="form-label">Número de Póliza</label>
+                                    <input type="text" class="form-control" id="numeroPoliza">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="tipoSeguro" class="form-label">Tipo de Seguro</label>
+                                    <input type="text" class="form-control" id="tipoSeguro">
+                                </div>
+                            </div>
+
+                            <!-- Otros -->
+
+                            <a data-bs-toggle="collapse" href="#otros" role="button" aria-expanded="false"
+                                aria-controls="collapseExample">
+                                <h4>Otros</h4>
+
+                            </a>
+                            <div class="collapse" id="otros">
+                                <div class="mb-3">
+                                    <label for="profesion" class="form-label">Profesión</label>
+                                    <input type="text" class="form-control" id="profesion">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="nombreEmpresa" class="form-label">Nombre de la Empresa</label>
+                                    <input type="text" class="form-control" id="nombreEmpresa">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="direccionEmpresa" class="form-label">Dirección de la Empresa</label>
+                                    <input type="text" class="form-control" id="direccionEmpresa">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="referidoPor" class="form-label">Referido por</label>
+                                    <input type="text" class="form-control" id="referidoPor">
+                                </div>
+                            </div>
+                            <div id="liveAlertPlaceholder"></div>
+                            <input type="hidden" id="editId">
+                            <button type="submit" class="btn btn-primary">Actualizar Paciente</button>
+                        </form>
+                        <div id="mensajeError" class="alert alert-danger mt-3" style="display: none;">Ocurrió un error
+                            al registrar
+                            el paciente.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+
+
+    <!-- modal para ver historia en concreto -->
+    <div class="modal fade" id="historiaModal" style="z-index: 1058;" tabindex="-2" aria-labelledby="historiaModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="historiaModalLabel">Detalles de la Historia Médica</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body" id="modalBodyContent">
+                    <!-- Aquí se insertará la información detallada -->
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal para Ver Historial -->
+    <div class="modal fade" id="historialModal" style="z-index: 1059;" tabindex="-1" aria-labelledby="historialModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="historialModalLabel">Historial de Historias Clínicas</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <ul id="historialList" class="list-group">
+                        <!-- Aquí se cargará el historial de historias -->
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+
+
+    <!-- Bootstrap JS -->
+    <script src="/bootstrap-5.3.3-dist/bootstrap-5.3.3-dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/helpers/navbar.js"></script>
+    <script type="module" src="/pacientes/getPacientes.js"></script>
+    <script type="module" src="/historias/postHistorias.js"></script>
+
+</body>
+
+</html>

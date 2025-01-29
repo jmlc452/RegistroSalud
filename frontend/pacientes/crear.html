@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crear Paciente</title>
+    <!-- Bootstrap CSS -->
+    <link href="/bootstrap-5.3.3-dist/bootstrap-5.3.3-dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+
+
+
+    <div class="container">
+        <a href="/dashboard/" class="btn btn-primary my-4">Volver</a>
+        <div class="container  border p-3 rounded bg-light mb-4">
+            <h2>Registro de Pacientes</h2>
+            <form id="userForm">
+                <!-- Información Personal -->
+                <div class="row mb-3">
+                    <div class="col">
+                        <label for="nombre" class="form-label">Nombre <span class="text-danger">*</span></label>
+                        <input type="text" class="form-control" id="nombre" required>
+                    </div>
+                    <div class="col">
+                        <label for="apellido" class="form-label">Apellido <span class="text-danger">*</span></label>
+                        <input type="text" class="form-control" id="apellido" required>
+                    </div>
+
+                </div>
+
+                <div class="row mb-3">
+                    <div class="col">
+                        <label for="fechaNacimiento" class="form-label">Fecha de Nacimiento <span
+                                class="text-danger">*</span></label>
+                        <input type="date" class="form-control" id="fechaNacimiento" required>
+                    </div>
+                    <div class="col">
+                        <label for="genero" class="form-label">Genero</label>
+                        <select id="genero" class="form-select">
+                            <option value="Masculino">Masculino</option>
+                            <option value="Femenino">Femenino</option>
+                            <option value="Otro">Otro</option>
+                        </select>
+                    </div>
+                    <div class="col">
+                        <label for="nacionalidad" class="form-label">Nacionalidad</label>
+                        <select id="nacionalidad" class="form-select">
+                            <option value="Venezolano">Venezolano</option>
+                            <option value="Extranjero">Extranjero</option>
+                        </select>
+                    </div>
+
+                </div>
+
+                <div class="row">
+                    <div class="col">
+                        <label for="estadoCivil" class="form-label">Estado Civil</label>
+                        <select id="estadoCivil" class="form-select">
+                            <option value="soltero">Soltero/a</option>
+                            <option value="casado">Casado/a</option>
+                            <option value="divorciado">Divorciado/a</option>
+                            <option value="viudo">Viudo/a</option>
+                            <option value="union_civil">Unión civil</option>
+                            <option value="separado">Separado/a legalmente</option>
+                        </select>
+                    </div>
+                    <div class="col">
+                        <label for="documentoIdentidad" class="form-label">Documento de Identidad <span
+                                class="text-danger">*</span></label>
+                        <input type="text" class="form-control" id="documentoIdentidad" required>
+                    </div>
+
+                    <div class="col">
+                        <label for="telefonoMovil" class="form-label">Teléfono Móvil <span
+                                class="text-danger">*</span></label>
+                        <input type="text" class="form-control" id="telefonoMovil" required>
+                    </div>
+
+                </div>
+
+                <div class="row">
+                    <div class="col">
+                        <label for="telefonoFijo" class="form-label">Teléfono Fijo</label>
+                        <input type="text" class="form-control" id="telefonoFijo">
+                    </div>
+                    <div class="col">
+                        <label for="correoElectronico" class="form-label">Correo Electrónico</label>
+                        <input type="email" class="form-control" id="correoElectronico">
+                    </div>
+                </div>
+
+                <div class="mt-2">
+                    <label for="img" class="form-label">Seleccione una foto</label>
+                    <input class="form-control" type="file" id="img" name="img">
+                </div>
+
+                <div class="accordion mt-4" id="accordionExample">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                <h4>Información de Vivienda</h4>
+                            </button>
+                        </h2>
+                        <div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                <div class="mb-3">
+                                    <label for="estado" class="form-label">Estado</label>
+                                    <input type="text" class="form-control" id="estado">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="ciudad" class="form-label">Ciudad</label>
+                                    <input type="text" class="form-control" id="ciudad">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="calle" class="form-label">Calle</label>
+                                    <input type="text" class="form-control" id="calle">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="numero" class="form-label">Número</label>
+                                    <input type="text" class="form-control" id="numero">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                <h4>Información Médica</h4>
+                            </button>
+                        </h2>
+                        <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                <div class="mb-3">
+                                    <label for="tipoSangre" class="form-label">Tipo de Sangre </label>
+                                    <input type="text" class="form-control" id="tipoSangre">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="alergias" class="form-label">Alergias</label>
+                                    <input type="text" class="form-control" id="alergias"
+                                        placeholder="Separadas por comas">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="condicionesPreexistentes" class="form-label">Condiciones
+                                        Preexistentes</label>
+                                    <input type="text" class="form-control" id="condicionesPreexistentes"
+                                        placeholder="Separadas por comas">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="medicamentosActuales" class="form-label">Medicamentos Actuales</label>
+                                    <input type="text" class="form-control" id="medicamentosActuales"
+                                        placeholder="Separadas por comas">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="antecedentesFamiliares" class="form-label">Antecedentes
+                                        Familiares</label>
+                                    <input type="text" class="form-control" id="antecedentesFamiliares"
+                                        placeholder="Separadas por comas">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="vacunasRecibidas" class="form-label">Vacunas Recibidas</label>
+                                    <input type="text" class="form-control" id="vacunasRecibidas"
+                                        placeholder="Separadas por comas">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapse4" aria-expanded="false" aria-controls="collapse4">
+                                <h4>Contacto de Emergencia</h4>
+                            </button>
+                        </h2>
+                        <div id="collapse4" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+
+                                <div class="mb-3">
+                                    <label for="nombreEmergencia" class="form-label">Nombre del Contacto</label>
+                                    <input type="text" class="form-control" id="nombreEmergencia">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="relacionEmergencia" class="form-label">Relación</label>
+                                    <input type="text" class="form-control" id="relacionEmergencia">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="telefonoEmergencia" class="form-label">Teléfono de Contacto</label>
+                                    <input type="text" class="form-control" id="telefonoEmergencia">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="direccionEmergencia" class="form-label">Dirección</label>
+                                    <input type="text" class="form-control" id="direccionEmergencia">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapse5" aria-expanded="false" aria-controls="collapse5">
+                                <h4>Seguro Médico</h4>
+                            </button>
+                        </h2>
+                        <div id="collapse5" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+
+                                <div class="mb-3">
+                                    <label for="nombreAseguradora" class="form-label">Nombre de la Aseguradora</label>
+                                    <input type="text" class="form-control" id="nombreAseguradora">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="numeroPoliza" class="form-label">Número de Póliza</label>
+                                    <input type="text" class="form-control" id="numeroPoliza">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="tipoSeguro" class="form-label">Tipo de Seguro</label>
+                                    <input type="text" class="form-control" id="tipoSeguro">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapse6" aria-expanded="false" aria-controls="collapse6">
+                                <h4>Otros</h4>
+                            </button>
+                        </h2>
+                        <div id="collapse6" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                <div class="mb-3">
+                                    <label for="profesion" class="form-label">Profesión</label>
+                                    <input type="text" class="form-control" id="profesion">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="nombreEmpresa" class="form-label">Nombre de la Empresa</label>
+                                    <input type="text" class="form-control" id="nombreEmpresa">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="direccionEmpresa" class="form-label">Dirección de la Empresa</label>
+                                    <input type="text" class="form-control" id="direccionEmpresa">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="referidoPor" class="form-label">Referido por</label>
+                                    <input type="text" class="form-control" id="referidoPor">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <!-- Consentimientos -->
+                <h4>Consentimientos</h4>
+                <div class="form-check mb-3">
+                    <input class="form-check-input" type="checkbox" id="compartirInformacionMedica" required>
+                    <label class="form-check-label" for="compartirInformacionMedica">
+                        Acepto compartir mi información médica <span class="text-danger">*</span>
+                    </label>
+                </div>
+                <div class="form-check mb-3">
+                    <input class="form-check-input" type="checkbox" id="tratamientoMedico" required>
+                    <label class="form-check-label" for="tratamientoMedico">
+                        Acepto recibir tratamiento médico <span class="text-danger">*</span>
+                    </label>
+                </div>
+                <div id="liveAlertPlaceholder"></div>
+
+                <button type="submit" class="btn btn-primary">Registrar Paciente</button>
+            </form>
+            <div id="mensajeError" class="alert alert-danger mt-3" style="display: none;">Ocurrió un error al registrar
+                el paciente.</div>
+        </div>
+    </div>
+
+
+
+    <!-- Bootstrap JS -->
+    <script src="/bootstrap-5.3.3-dist/bootstrap-5.3.3-dist/js/bootstrap.bundle.min.js"></script>
+    <script type="module" src="/pacientes/crearPaciente.js"></script>
+
+
+</body>
+
+</html>

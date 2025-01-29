@@ -1,0 +1,30 @@
+.navbar-custom {
+    background-color: #d46e6e;
+    /* Color rojizo */
+}
+
+.navbar-custom .navbar-brand,
+.navbar-custom .nav-link {
+    color: #ffffff;
+    /* Color de texto blanco para contraste */
+}
+
+.navbar-custom .nav-link:hover {
+    color: #f8d7da;
+    /* Color blanco pálido para hover */
+}
+
+.navbar-custom .dropdown-menu {
+    background-color: #f8d7da;
+    /* Color de fondo de dropdown */
+}
+
+.navbar-custom .dropdown-item {
+    color: #b71c1c;
+    /* Color de texto de items en el dropdown */
+}
+
+.navbar-custom .dropdown-item:hover {
+    background-color: #f5c6cb;
+    /* Color de fondo de item en hover */
+}
