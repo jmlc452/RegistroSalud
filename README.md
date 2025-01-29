@@ -68,7 +68,9 @@ Asegúrate de tener instalado:
    ```sh
    cd jmlc452/frontend
    ```
-2. Abrir el archivo `index.html` (`login/index.html`) con Live Server para visualizar la interfaz:
+2. descomprimir el archivo `libs.rar` en la raiz de la carpeta
+   
+3. Abrir el archivo `index.html` (`login/index.html`) con Live Server para visualizar la interfaz:
    ```sh
    # Si usas VS Code, abre el archivo y presiona botón derecho -> "Open with Live Server"
    ```
