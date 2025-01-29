@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dropdown con Imagen</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .rounded-circle {
+            width: 40px; /* Ajusta el tamaño según tus necesidades */
+            height: 40px; /* Ajusta el tamaño según tus necesidades */
+        }
+    </style>
+</head>
+<body>
+
+<div class="dropdown">
+    <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALMAAACUCAMAAADvY+hPAAAAjVBMVEX///8wMzgAAAD8/PwtMDX5+fkpLDIiJiwxMzbu7u7U1NT09PQmKS96e3zm5uYjJCYpKize3t6+vr8aHiW0tLWnp6ienp/DxMWXl5geICWIiYvMzMxBQ0eRkpOAgYJMTlEAAAxcXV86PEBUVllrbW8aGx0TFx4TFRcACRQNEBdkZWYICw8KEhwAAxUaIyizhJp6AAAMFUlEQVR4nO1ca3uqPLM2JCQBOYSTGEFRQGxpH///z9sTdbWrLUpAbNd77d5XP6wDxukwhzuTycxmv/jFL37xi1/8qzAtL7BtOwPYduBZ5k8LdBtmkCbrTd1WRV4ihMq8qNp6s0zCQAmOf1q8r/ASt8o5831fOJQSBUqd0995XrmJ99MC/gWszCHbEOOZEYI450IIdoEjKPyDkp69GmSTKUPB/4K+vXSdG3sKxoCobCTJq13tnlG3RSlkE13+08jX6c+qG59+gkVLo5M2o6enYrMIM+V4c1NhrtwxCxeb4vkpgkc4PLlbBD8sdOCWjkMQEnujcUOQtevFY5A9dKURUXiSsdz9QalNuzYk58hxytvaO/8i3mJXMgchcjRq+yciIHiSvZISJJCyXWaan8qW7d7nCEXHlf0Dwc9a5gf4dtnUg9zKS+smgt+0KRfWw2TrAigoLSCyEQfe8nzgh+dgUYIjyor0IcJd/d7aoIgw0o6LXF7LGcQ+o7a+zUBwmIPrUVmHozNEWkuIj1ERfpfIawTeL3l8j0FaMd9DxOFr/B2anrd7gsi2Du54r+qDQW3AOvt2qD+M+K4MgSmyMpxgtbCEuMd49mhNx9yBkNzaEyyFZ0ErCfJ5PMFiN5BQwfl+NVVotdbgzEImEy33FfAGE58iYSTTvUucGIRwfzHZgl++YHlQrq6bqDUWnCn/gKB3WD7EpGHRRQTWV0wn8hmZyqj75WMcMX4hiBX25IsHhcP5y0McMQXDE+IR1NfzfUREOL2mU06RUz5mZ2SVDhd8csoUFD6n+RRh+SvMmZ1T7udTv8M2gi31A17fBSkiSLbTrrk8IGIkD2SOyRbxl+V06+FZ7MO2ejXdih1Y7YHGTBg8vEpw2XbuqTthenaWpmlmB/pb1XkrES0mM2lzJTkttP0vXbq7kjDpoHznrlNdrmkXgkerafbjeJYeIJlo8hicVEB6HFXJQIRS3+dVoiMH7HcSiEzPU2XZBgKRq+V+84V8gqSG3qCKdS9yoaFrWN6ViLyYk/j5uoEspcM+cbYzCPoKsm1tnX2jRSjfr+8uQqryVknQs5ZDJ7Dv4B0yI+SXGvwVwtMz5+XdhAY+vvKJ3Ok40obRToFPNVF/oyHKfMcQmyCkphRMUmPLht3tVYmVYb+4GuqzESH0bt5hupKzTb/nm0t5S2RlH0uNVTYMSffeeBdE8HUaASgm1w3j4oki7vcuuyR8f29icSPE6v7HLNonMuKUaASf2uFSL65el8XgyOglzXhW9VmGAiv6v9AzEDLu2dbj2RKsedf/a4eGhsgI/adRyWnBou/id/OKom2/NZu7XstQILTqj5nZlojqHkWHCDkaC4SoK/11Sd2naIytiqnNxWiYG4mifnKEIULpgbl9igaqJAlbjXfCoKBEYw8Ij2nKrEOQ7Zzcw6PTPRC6fhNMdYLGGfv+JDd3HRSNzYUYr/dc9JfS8KLRlvmw6H/rC4ai9VjjmOeCl0FvpJvXuuYMCbzuf21AJGk5rpKOZ8EWkUKDjWmbM0Ki0BCmctB2nEGDBzdIZ7NtlZqRTsnMNULvOkLPY0vS8M6fNJzBcvRlJkxD5mzLdThOJwSkfg1f8NgAmSMNmbHBCRsnstcgijSes6i+zFxHzzMwttdx1cz0CPxbR+ap7XnmHlE0Ln0vj+g10dnFTR03ZskrYuO4nSv4i07xSLESXehtnOxX5IxyQtwKrlXWx8mAPKgVwzyH0HbMrtCqhMi1PCGV3VWNLj1rEQkvp3QUh/YKoUm+g0poCq1J2KzKIcWYwGHnsJvUKbTh2drXVLMmMZ67TIcDf0VWErnRoyqprmkgPY5priJSjqmQpojItaYj1I6OwMRp9SimCYwDjQnQsMmLdI90bb19t6GpO7wEmcecU8QERZpn51iVbvoR6WTVE2AXQYbLjM8y624XrKKX93On0A1feJzMJz032jLPQk56WAfRP2hVMtPRMus/njQ9MfowYLGxMg/xQYXkcEvRQi9rnzHaByHWRbqx7oQFv27TjC8GFDtHx7pTThlEVMJi33WeAuqPikESjM4pdk50CjJ/w6sN0aFkatTDyMPo3O0VIwqU6Y4wyt9KjpwTyvhuqMqsFjjSmGqB4qLDe0zMcFP4Dbvcm2B7WWzCwUwYuCgZxUW1Of+HD8FPEC7rnEopaV4vw2BEFSsYy/lhb0VexzXG4LlleZ5ndbf398N+Ro52nv+Apa+3h/0K/OUPwzB+D5s2itX8xA0YYFzNuFqB94poOUrm+aXnJPDGlTdLOrYmM6NEq/b1htOzXuyer4hxVJZ5sXPjwUHrjtqXqjFqHFq9w/TC3d44XAIdQadwd3w1DrvQGxIFMoOLsT1g4ArRWvtpK1yhJ0a+Zm/O/Se0CfXj7VryIYzqAwID0UrzWSup99F1YkeiqE48TeeoKDLG1sznuUNKvQ/HufBv82fiiFxPeXecTagLEnvi9DJ1PMNZviWo71wTWIiRZ7i/dSeBTd34A8J0r04h+z7urf0uNtcF5q97YxiQOtSM7zsJCtrT16quilXRlS6kLguJqj46cOeZJl6x22fHWF3YGHA0gVQ7Vc+mKdmrxpzx6Rf2hLfO6MFNV9u+/fYncL5dXXcwPLN2go/aV/2BVVD+cjWtgMib50ECn/F6qwxoPyGiXQjpFGoZcf96SrI2e21L/guk2VwXqpboqJ/IunCz1cZcsTEiA+TqWoulpb7wzg5893i9h2p9s6PuJv67FoBdH7H2TgJsN4SU3eEp3o7Usko/2+5wZJeUN/feGjDrCInOruTMHxYwPoKLrt5IsDYk6zt7AvEsZUTwjt/c2mnVya/LvOuwWpsT4tx/5wOvJIq+dF1gc6V/wNaN6HORCuM5vFQ5Rau5Deu/fsld6Y0mXD18USiexQd+zXkGYgUWzT8p2izusowTWPFJo3NCtRpGNGD+R/nn9uXk5W6REXr6FDtAOWQ7ySUEPAsbzsUH65j3EHw9EP/D24vh1Y0sEXyF6UbI+UAPF/pdU7fg/114CQoGr3Oy2Quq6c//K2x61b0OeAIX1Xu8M4FoiOnu1ID5So6ad+YSTyIywInPbqLOn/dgK5Ne5oUVkfFnRWtAQ91NEFn/4V+xAVqZ9kaXWUn+dlhm6/c+9AkdXaJxyjmX1cSDROxcvPmhV+j2EfRBXlYMClh94huVYG+hoFzk1uUrdI6K+8CVyKfKgZULTpwH3KgMBecOOzs6ru8idReZZX0ZNMPZ6Q7v5MCz5MARq4LTn2drcm/ypnx93qyoNhvyOSdOheWec1ad70PhuLzLqLlfxvhSH2GcNxNeK/0Ac3U4z544wau24+2DGNWl4miXAja1E911/AJ1+18QLrbxxVeScpxVc8JKZQqgZByrwSHHR2n5LKYPWvGX1llHwUrI4VJzX2wuQ1LmSyBbdNr09wmgGDUzBBz+wgtw2j47AxMMbXap+Wc8iyScjuouGYRUFZpZnl6OT+ZhaYgBfbnCQKFioOrDaS6B+YtvGJNk7cCKxV/H7mmLmF7gU2ff6ezPYZG7pYjK3beMo8Ib4nASlfEbY8/WhZSC366aUymL9TnmgMzzuIxA62Iz/54TSDPOIXc7zH1/q0G4Ko3ourZpY/BV+M6OM1fV2WUZf9N8NayaFQwKEQudDeSkKNPKVrmxbZhD0XnG4XmqIaGsMYx8lZ0HYJ7NouYS/sNov3dMWVio2My27ocZZdhO3F2Rl6Uay0iAoJxONZPs72fmtmuoaV+seHi8+AxvXUYEzBos5M0bz3uOuWencRwnSRymtje/bEQuVmulrq/od1Sqk5VvP0y3NxLCnu7MvZPQ2bJlqin9GLmPGT/SIwOYcLYzHEi9Dit3i/6asZe0pRDqeWOXPXrK1w0Edemohm2nMeQqvDZo1rS8cCWMhqqKl1PWPzn5Ur1ue7ETp/mhtHk5FJukY1ZnsikOL/vTpIjI2S1+wio+A3RYbo9EhTYaNRHNq/Z9JmqVkyiKqDq6J8enEt7FT4t7gWmF7tE4sNOxGwRex/kze1ZNzlX/Rv2DcXTDf21I8WnGL1LSOpcGDnIR30FvM37/hVm5H2EG4fssZbDx8jRLeX2ZpfxP4qzE88zq7H9lZvUvfvGLX/zi/zX+D2tgw/1L3FMrAAAAAElFTkSuQmCC" alt="Perfil" class="rounded-circle">
+    </button>
+    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+        <a class="dropdown-item" href="#">Perfil</a>
+        <a class="dropdown-item" href="#">Configuraciones</a>
+        <a class="dropdown-item" href="#">Cerrar sesión</a>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
