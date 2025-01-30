@@ -92,5 +92,5 @@ Este proyecto está bajo la licencia MIT.
 ## Contacto
 Si tienes preguntas o sugerencias, contáctame en:
 - **Correo**: jmlc452@gmail.com
-- **GitHub**: [tu-usuario](https://github.com/jmlc452)
+- **GitHub**: [jmlc452](https://github.com/jmlc452)
 
